@@ -1,0 +1,5 @@
+---
+  aws_region: 'us-east-1'
+  jobName: 'telepath-test-job'
+  jobQueue: 'arn:aws:batch:us-east-1:123456789012:job-queue/first-run-job-queue'
+  jobDefinition: 'arn:aws:batch:us-east-1:123456789012:job-definition/job_defn_01:12'

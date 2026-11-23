@@ -1,0 +1,32 @@
+#FROM nvidia/cuda:latest
+FROM nvidia/cuda:11.0-base-ubuntu20.04
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    python3.8 python3-pip python3-setuptools python3-dev \
+    gcc g++ libpython3.8-dev build-essential libpcre3 libpcre3-dev apt-utils git
+
+WORKDIR .
+
+COPY requirements.txt requirements.txt
+RUN python3 -m pip install --no-cache-dir -r requirements.txt
+
+# dumb
+RUN mkdir -p /tmp/telepath-runs/cartpole/replay/ && \
+    mkdir -p /tmp/telepath-runs/cartpole/agents/ && \
+    mkdir -p /tmp/telepath-runs/cartpole/agent_perf/ && \
+    mkdir -p /src/telepath/mlruns
+# worse
+RUN chmod a+wrx /
+RUN mkdir -p /nonexistent
+RUN chmod a+wrx /nonexistent
+
+# put all src into separate /src folder, with no secrets
+## copies far too much
+#COPY worker /src/telepath-core/worker
+
+COPY syscheck/syscheck.py /src/syscheck.py
+
+WORKDIR /src/
+
+CMD python3 syscheck.py

@@ -1,0 +1,8 @@
+---
+  telepath_spec: 2
+  spec_type: settings
+  content:
+    tblog_folder: "/path/to/telepath-runs/default/tblogs/"
+    #mlflow_folder: "/path/to/telepath-runs/default/mlruns/"
+    label: "simplegym_test1"    # used for wandb
+    eval_eps: 3

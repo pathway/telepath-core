@@ -1,0 +1,5 @@
+---
+  telepath_spec: 2
+  spec_type: agent
+  agent_frame: telepath_sbl3
+  spec_subtype: dqn

@@ -1,0 +1,6 @@
+---
+  telepath_spec: 2
+  spec_type: env
+  env_label: CartPole-v0
+  n_obs: 4
+  n_actions: 2

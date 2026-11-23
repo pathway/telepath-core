@@ -1,0 +1,8 @@
+---
+  telepath_spec: 2
+  spec_type: settings
+  content:
+    tblog_folder: "s3://example-telepath-bucket/tblogs/"
+    #mlflow_folder: "s3://example-telepath-bucket/t2/mlruns/"
+    #label: "default"  # wandb
+    eval_eps: 3

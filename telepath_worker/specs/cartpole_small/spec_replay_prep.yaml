@@ -1,0 +1,27 @@
+---
+  telepath_spec: 2
+  spec_type: replay_prep
+  content:
+    prep_scripts:
+      -
+        prep_mode: all
+        script:
+          - ren obs0 cart_pos
+          - ren obs1 cart_vel
+          - ren obs2 pole_ang
+          - ren obs3 pole_ang_vel
+          - ren nx_obs0 nx_cart_pos
+          - ren nx_obs1 nx_cart_vel
+          - ren nx_obs2 nx_pole_ang
+          - ren nx_obs3 nx_pole_ang_vel
+      -
+        prep_mode: predict
+        script:
+          #- query match_nx_aid==0
+          - noop
+      -
+        prep_mode: train
+        script:
+          #- noop
+          - sort_rand
+          #- query match_nx_aid==1

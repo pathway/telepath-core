@@ -1,0 +1,16 @@
+telepath_spec: 2
+spec_type: replay_prep
+content:
+  xform:
+    - f16 obs0 obs1 obs2 obs3
+    - sort obs0 sid
+    - std obs0 obs1 obs2
+    - logp1 obs0 obs1
+    - shift -1 obs0 obs1 obs2 obs3
+    - shift 1 obs0
+    - roll sum 2 obs2 obs3
+    - nonzero obs0 obs1 obs2
+    - rm obs3 nx_obs2
+    - match match_sid action reward
+    - mult obs0 match_sid
+    - sort_rand

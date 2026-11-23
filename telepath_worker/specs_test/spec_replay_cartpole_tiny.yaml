@@ -1,0 +1,28 @@
+---
+  telepath_spec: 2
+  spec_type: replay
+  sample_strategy: rand
+  chunksize: 10000
+  n_actions: 2
+  fieldmap:
+      sid: sid
+      tid: tid
+      step: step
+      done: done
+      action: action
+      #reward_expr: ev1*1.5 + ev2*2.0 + ev3*-3.0
+      reward: rew
+      obs_cols:
+        - obs0
+        - obs1
+        - obs2
+        - obs3
+      next_obs_cols:
+        - nx_obs0
+        - nx_obs1
+        - nx_obs2
+        - nx_obs3
+      post_event_cols:
+        - ev1
+        - ev2
+        - ev3

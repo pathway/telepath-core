@@ -1,0 +1,5 @@
+---
+  aws_region: 'us-west-2'
+  jobName: 'job-001'
+  jobQueue: 'arn:aws:batch:us-west-2:123456789012:job-queue/job-q-02'
+  jobDefinition: 'arn:aws:batch:us-west-2:123456789012:job-definition/job-def-02:1'

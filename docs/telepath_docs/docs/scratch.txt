@@ -1,0 +1,29 @@
+./telepath generate_replay \
+     --project_spec=specs2/telepath_settings.yaml \
+     --env_id=SimpleGym_Sequential_Short-v0 \
+     --out_replay=/tmp/simplegym_seq_short_replay_rawtrain.csv \
+     --replay_spec=specs2/spec_replay_simplegym_seq_short.yaml   \
+     --algo_spec=specs2/tiny_spec_algo.yaml \
+     --agent_dest=/tmp/simplegym_seq_short__online.agent_telepath
+
+./telepath prep \
+     --project_spec=specs2/telepath_settings.yaml \
+     --in_replay=/tmp/simplegym_seq_short_replay_rawtrain.csv \
+     --in_replay_spec=specs2/spec_replay_simplegym_seq_short.yaml  \
+     --out_replay=/tmp/simplegym_seq_short_replay.csv \
+     --out_replay_spec=specs2/spec_replay_simplegym_seq_short.yaml \
+     --prep_spec=specs2/replay_prep_passthru.yaml
+
+./telepath train \
+     --project_spec=specs2/telepath_settings.yaml \
+     --replay=/tmp/simplegym_seq_short_replay.csv \
+     --replay_spec=specs2/spec_replay_simplegym_seq_short.yaml   \
+     --algo_spec=specs2/tiny_spec_algo.yaml \
+     --agent_path=/tmp/simplegym_seq_short__batch.agent_telepath
+
+./telepath predict \
+     --project_spec=specs2/telepath_settings.yaml \
+     --in_features_path=/tmp/simplegym_seq_short_replay.csv \
+     --in_spec=specs2/spec_replay_simplegym_seq_short.yaml    \
+     --agent_path=/tmp/simplegym_seq_short__batch.agent_telepath \
+     --out_pred_path=/tmp/simplegym_seq_short__predict.csv

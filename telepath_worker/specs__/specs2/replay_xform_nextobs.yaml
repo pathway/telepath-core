@@ -1,0 +1,9 @@
+telepath_spec: 2
+spec_type: replay_prep
+content:
+  order_by:
+    - tid
+    - step
+  xform:
+    obs: identity
+  shift_next_obs: True  # if next_obs missing

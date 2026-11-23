@@ -1,0 +1,39 @@
+# specs better
+
+- add default_specs folder, allowing easy addition of new parameters, or even whole spec files, without breaking
+- add experiment spec / metaspec
+    - simplify command line by putting all specs into one file
+    - only pass that one spec file in
+    - then exact argument names on each command dont matter anymore
+    - look at integration_lib:get_params for structure
+- consider string-replace variables to simplify handling of repeated paths
+- *** consider overriding specific parameters
+    - imagine specs were a single heirarchy
+    - refer to any component by path
+    - override on cmdline with full path
+- improve spec file format (esp. replay spec)
+
+
+SPEC_FOLDER: specs/cartpole_small
+DATA_FOLDER: /path/to/telepath-core/projects/cartpole_small
+
+specs:
+  default_specs: spec_defaults/
+  proj_spec: SPEC_FOLDER/spec_project.yaml
+  raw_replay_spec: SPEC_FOLDER/spec_replay.yaml
+  prep_spec: SPEC_FOLDER/spec_replay_prep.yaml
+  replay_spec: SPEC_FOLDER/spec_replay.yaml
+  algo_spec: SPEC_FOLDER/spec_algo.yaml
+data:
+  rawtrain_path: PROJECT_FOLDER/raw_replay.csv
+  replay_path: PROJECT_FOLDER/replay.csv
+  replay_predict_path: PROJECT_FOLDER/replay_predict.csv
+  replay_train_path: PROJECT_FOLDER/replay_train.csv
+  out_pred_path: PROJECT_FOLDER/predict.csv
+agent:
+  agent_folder: PROJECT_FOLDER/agent/
+  online_agent_folder: PROJECT_FOLDER/online.agent_telepath
+  online_agent_path: PROJECT_FOLDER/online.agent_telepath
+  agent_path: PROJECT_FOLDER/batch.agent_telepath
+params:
+  env_id: None

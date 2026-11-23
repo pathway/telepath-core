@@ -1,0 +1,9 @@
+---
+  telepath_spec: 2
+  spec_type: settings
+  content:
+    tblog_folder: "/path/to/telepath-runs/default/tblogs/"
+    runlog_folder: "s3://example-telepath-test-bucket/cartpole_small/runlog/"
+    #mlflow_folder: "/path/to/telepath-runs/default/mlruns/"
+    #label: "default"    # used for wandb
+    eval_eps: 3

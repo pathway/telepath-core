@@ -1,0 +1,21 @@
+chunksize: 10000
+fieldmap:
+  action: action
+  done: done
+  next_obs_cols:
+  - nx_obs0
+  - nx_obs1
+  - nx_obs2
+  obs_cols:
+  - obs0
+  - obs1
+  - obs2
+  reward: reward
+  sid: sid
+  step: step
+  tid: tid
+n_actions: 10
+sample_strategy: rand
+spec_type: replay
+telepath_spec: 2
+xform: {}

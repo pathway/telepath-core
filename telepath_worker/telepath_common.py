@@ -1,0 +1,2 @@
+PYTORCH_DEVICE='cuda:0'
+#PYTORCH_DEVICE='cpu'

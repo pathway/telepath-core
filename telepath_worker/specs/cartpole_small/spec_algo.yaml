@@ -1,0 +1,11 @@
+---
+  telepath_spec: 2
+  spec_type: algo
+  content:
+    agent_learning_rate: 0.003
+    agent_batch_size: 64
+    total_samples: 500
+    train_steps_per_agent: 1000
+    agent_target_update_interval: 100
+    agent_learning_starts: 500
+    env_gamma: 0.98

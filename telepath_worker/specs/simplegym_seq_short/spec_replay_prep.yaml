@@ -1,0 +1,20 @@
+---
+  telepath_spec: 2
+  spec_type: replay_prep
+  content:
+    prep_scripts:
+      -
+        prep_mode: all
+        script:
+          - noop
+      -
+        prep_mode: predict
+        script:
+          #- query match_nx_aid==0
+          - noop
+      -
+        prep_mode: train
+        script:
+          #- noop
+          - sort_rand
+          #- query match_nx_aid==1

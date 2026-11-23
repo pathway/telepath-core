@@ -1,0 +1,39 @@
+site_name: Telepath Docs TELEPATH_VERSION
+
+theme:
+    name: readthedocs
+    custom_dir: 'theme_fork2/'
+    highlightjs: false
+
+#theme: readthedocs
+#theme: mkdocs
+#readthedocs
+#material
+use_directory_urls: False
+nav:
+    - Home: 'index.md'
+    - Command Line: 'cmd.md'
+    - Spec files: 'specs.md'
+    #- Predict: 'predict.md'
+    - Prep scripts: 'prep.md'
+    - Replay files: 'replay.md'
+    #- Training: 'train.md'
+    - Amazon Web Services: 'aws.md'
+
+    - Appendix:
+        #- Concepts: 'concepts.md'
+        #- Controller: 'ctl.md'
+        - Changelog: 'change.md'
+        - Docker: 'docker.md'
+        - Integration scripts: 'integ.md'
+        - Multiprocessing: 'procx.md'
+        - Performance: 'perform.md'
+        - Syscheck: 'syscheck.md'
+        - Tensorboard: 'tb.md'
+        - Unique Agent Names: 'uniq.md'
+        - License: 'lic.md'
+
+copyright: Copyright &copy; 2020 <a href="https://pathwayi.com/">Pathway Intelligence Inc</a>
+extra:
+    generator: false
+
